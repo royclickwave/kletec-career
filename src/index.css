@@ -201,7 +201,11 @@ img {
 
 .logo img {
   height: 45px;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header:not(.scrolled) .logo img {
+  filter: brightness(0) invert(1);
 }
 
 .header.scrolled .logo img {
@@ -216,11 +220,19 @@ img {
 
 .nav-list a {
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-white);
   font-size: 15px;
 }
 
+.header.scrolled .nav-list a {
+  color: var(--color-primary);
+}
+
 .nav-list a:hover {
+  color: var(--color-secondary);
+}
+
+.header.scrolled .nav-list a:hover {
   color: var(--color-accent);
 }
 
@@ -244,8 +256,12 @@ img {
   display: none;
   background: none;
   border: none;
-  color: var(--color-primary);
+  color: var(--color-white);
   cursor: pointer;
+}
+
+.header.scrolled .menu-toggle {
+  color: var(--color-primary);
 }
 
 @media (max-width: 992px) {
